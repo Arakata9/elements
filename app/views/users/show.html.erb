@@ -1,0 +1,20 @@
+<div class="row">
+  <aside class="col-sm-7 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <img class="rounded-circle img-fluid d-block mx-auto" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
+        <h2 class="mt-2 text-center"><%= @user.name %></h2>
+      </div>
+    </div>
+  </aside>
+  <div class="col-sm-7 mx-auto">
+    <ul class="nav nav-tabs nav-justified mb-1">
+      <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Elementer</a></li>
+    </ul>
+    <ul class="nav nav-tabs nav-justified">
+      <li class="nav-item"><a href="#" class="nav-link">Diary</a></li>
+    </ul>
+  </div>
+</div>
