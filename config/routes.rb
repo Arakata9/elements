@@ -8,5 +8,16 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get "signup",to:"users#new" #ユーザの新規登録 URL を /signupにするために設定
-  resources :users, only: [:index, :show, :new, :create] #必要なアクションはindex, show, new, create
+  resources :users, only: [:index, :show, :new, :create] do
+    member do
+      get :followings
+      get :followers
+    end
+    collection do
+      get :search
+    end
+  end
+  
+  resources :diaries, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end

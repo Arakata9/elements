@@ -1,0 +1,21 @@
+<ul class="list-unstyled">
+  <% diaries.each do |diary| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(diary.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to diary.user.name, user_path(diary.user) %> <span class="text-muted">posted at <%= diary.created_at %></span>
+        </div>
+        <div>
+          <p><%= diary.content %></p>
+        </div>
+        <div>
+          <% if current_user == diary.user %>
+            <%= link_to "Delete", diary, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate diaries %>
+</ul>
