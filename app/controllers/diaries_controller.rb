@@ -8,7 +8,7 @@ class DiariesController < ApplicationController
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to root_url
     else
-      @diaries = current_user.diaries.order(id: :desc).page(params[:page])
+      @diaries = current_user.feed_diaries.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'toppages/index'
     end
