@@ -1,4 +1,5 @@
 # README
-制作中の日記アプリ
-こちらから確認できます↓
+Ruby on Railsで制作中の日記アプリ
+
 https://iske-elements.herokuapp.com/
+
